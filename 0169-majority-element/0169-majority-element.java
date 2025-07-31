@@ -13,8 +13,25 @@ class Solution {
         // }
         // return -1;
 
+        //OPTIMIZED
+        // Arrays.sort(nums);
+        // return nums[nums.length/2];
 
+        //MORE OPTIMIZED
         Arrays.sort(nums);
-        return nums[nums.length/2];
+        int majority=nums[0],votes=1;
+        for(int i=1;i<nums.length;i++){
+            if(votes==0){
+               majority=nums[i];
+               votes=1;
+            }
+            else if(nums[i]==majority){
+              votes++;
+            }
+            else{
+                votes--;
+            }
+        }
+        return majority;
     }
 }
