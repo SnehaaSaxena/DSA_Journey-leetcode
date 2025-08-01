@@ -18,5 +18,5 @@ class Solution {
 }
 
 // Explanation
-//n%2==1 -> ans=ans*x and n=n-1 else x*x and n/2
+//n%2==1 ->  x*func(x*x)  and n=n-1 else x*x and n/2
 //2^10 -> func(4,5) -> 4*func(16,2) -> func(256,1) -> 256* func(65536,0) 
