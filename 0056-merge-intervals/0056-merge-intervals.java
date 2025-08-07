@@ -1,5 +1,6 @@
 class Solution {
     public int[][] merge(int[][] arr) {
+        Arrays.sort(arr,Comparator.comparingDouble( o-> o[0]));
         ArrayList<int  [] > list=new ArrayList<>();
         for(int i=0;i<arr.length;i++){
             int start=arr[i][0],end=arr[i][1];
@@ -15,12 +16,12 @@ class Solution {
             int li[]=new int[]{start,end};
             list.add(li);
         }
-        int intervals[][]=new int[list.size()][2];
-        for(int i=0;i<list.size();i++){
-            for(int j=0;j<2;j++){
-                intervals[i][j]=list.get(i)[j];
-            }
-        }
-        return intervals;
+        // int intervals[][]=new int[list.size()][2];
+        // for(int i=0;i<list.size();i++){
+        //     for(int j=0;j<2;j++){
+        //         intervals[i][j]=list.get(i)[j];
+        //     }
+        // }
+       return list.toArray(new int[list.size()][]);
     }
 }
